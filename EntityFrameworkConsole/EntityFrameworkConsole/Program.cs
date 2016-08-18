@@ -11,6 +11,7 @@ namespace EntityFrameworkConsole
         static void Main(string[] args)
         {
             //sdssdfsdf
+            //This is another change
         }
     }
 }
