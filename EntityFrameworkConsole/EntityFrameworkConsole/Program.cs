@@ -10,6 +10,7 @@ namespace EntityFrameworkConsole
     {
         static void Main(string[] args)
         {
+            //sds
         }
     }
 }
