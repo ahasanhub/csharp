@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EntityFrameworkConsole.Model;
 
 namespace EntityFrameworkConsole
 {
@@ -10,8 +11,10 @@ namespace EntityFrameworkConsole
     {
         static void Main(string[] args)
         {
-            //sdssdfsdf
-            //This is another change
+            using (var ctx = new SchoolContext())
+            {
+                var st = ctx.Students.ToList();
+            }
         }
     }
 }
