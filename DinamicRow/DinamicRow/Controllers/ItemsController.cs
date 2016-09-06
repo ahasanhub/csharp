@@ -10,6 +10,7 @@ namespace DinamicRow.Controllers
     public class ItemsController : Controller
     {
         // GET: Items
+        [HttpGet]
         public ActionResult Index()
         {
             List<Gift> initialData = new List<Gift>
@@ -19,6 +20,16 @@ namespace DinamicRow.Controllers
             };
 
             return View(initialData);
+        }
+        [HttpPost]
+        public string Index(IEnumerable<Gift> gifts)
+        {
+            // To do: do whatever you want with the data
+            return "ok";
+        }
+        public PartialViewResult BlankEditorRow()
+        {
+            return PartialView("GiftEditorRow", new Gift());
         }
     }
 }

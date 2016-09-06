@@ -3,9 +3,13 @@
 <div class="editorRow">
     @using (Html.BeginCollectionItem("gifts"))
     {
-        //Item:
+        <span>Item:</span>
         @Html.TextBoxFor(x => x.Name);
-        //Value:
+        <span>Value:</span>
         @Html.TextBoxFor(x => x.Price, new {size = 4});
+        <a href="#" id="deleteRow" class="deleteRow" onclick="remove(this);">delete</a>
     }
+   
 </div>
+
+

@@ -5,13 +5,45 @@
 
 <h2>Gift List</h2>
 
-@using(Html.BeginForm()) { 
+@using (Html.BeginForm())
+{
     <div id="editorRows">
         @foreach (var item in Model)
         {
             Html.RenderPartial("GiftEditorRow", item);
         }
     </div>
- 
-    <input type="submit" value="Finished" />
- } 
+    @section Scripts
+{
+        <script>
+    $("#addItem").click(function () {
+        $.ajax({
+            url: this.href,
+            cache: false,
+            success: function(html) {
+                 $("#editorRows").append(html);
+            }
+        });
+        return false;
+    });
+
+
+    $("a.deleteRow").on("click", function () {
+        var dfd = $(this).parents("div.editorRow:first");
+        $(this).parents("div.editorRow:first").remove();
+        return false;
+    });
+
+    function remove(cntrl) {
+        var dfd = $(cntrl).parents("div.editorRow:first");
+        $(cntrl).parents("div.editorRow:first").remove();
+    }
+
+
+        </script>
+    }
+
+    @Html.ActionLink("Add another...", "BlankEditorRow", null, new { id = "addItem" })<input type="submit" value="Finished" />
+} 
+
+
