@@ -1,0 +1,17 @@
+﻿@model List<DinamicRow.Models.Gift>  
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gift List</h2>
+
+@using(Html.BeginForm()) { 
+    <div id="editorRows">
+        @foreach (var item in Model)
+        {
+            Html.RenderPartial("GiftEditorRow", item);
+        }
+    </div>
+ 
+    <input type="submit" value="Finished" />
+ } 
