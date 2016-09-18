@@ -18,6 +18,7 @@ namespace EntityFrameworkConsole.Model
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Standard> Standards { get; set; }
 
     }
     public class Student
@@ -25,9 +26,21 @@ namespace EntityFrameworkConsole.Model
         public Student() { }
 
         public int StudentId { get; set; }
-        [Required]
         public string StudentName { get; set; }
-       
+        public int StandardId { get; set; }
+        public virtual Standard Standard { get; set; }
+    }
+
+    public class Standard
+    {
+        public Standard()
+        {
+            Students = new List<Student>();
+        }
+        public int StandardId { get; set; }
+        public string Description { get; set; }
+
+        public virtual ICollection<Student> Students { get; set; }
     }
 
     public class Course

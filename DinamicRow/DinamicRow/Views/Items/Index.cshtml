@@ -13,9 +13,13 @@
             Html.RenderPartial("GiftEditorRow", item);
         }
     </div>
-    @section Scripts
+
+
+    @Html.ActionLink("Add another...", "BlankEditorRow", null, new { id = "addItem" })<input type="submit" value="Finished" />
+} 
+@section Scripts
 {
-        <script>
+    <script>
     $("#addItem").click(function () {
         $.ajax({
             url: this.href,
@@ -40,10 +44,7 @@
     }
 
 
-        </script>
-    }
-
-    @Html.ActionLink("Add another...", "BlankEditorRow", null, new { id = "addItem" })<input type="submit" value="Finished" />
-} 
+    </script>
+}
 
 

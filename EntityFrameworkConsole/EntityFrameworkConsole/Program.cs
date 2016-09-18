@@ -11,9 +11,20 @@ namespace EntityFrameworkConsole
     {
         static void Main(string[] args)
         {
+            Standard standard=new Standard();
+            standard.Description = "Std";
+            Student stu1=new Student {StudentName = "Ahasan"};
+            Student stu2 = new Student { StudentName = "Hasam" };
+            Student stu3 = new Student { StudentName = "Arif" };
+            standard.Students.Add(stu1);
+            standard.Students.Add(stu2);
+            standard.Students.Add(stu3);
+
             using (var ctx = new SchoolContext())
             {
-                var st = ctx.Students.ToList();
+                ctx.Standards.Add(standard);
+                ctx.SaveChanges();
+                var st = ctx.Standards.ToList();
             }
         }
     }
