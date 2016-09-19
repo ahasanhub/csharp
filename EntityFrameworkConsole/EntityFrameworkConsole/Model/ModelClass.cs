@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityFrameworkConsole.Model
 {
@@ -17,6 +11,7 @@ namespace EntityFrameworkConsole.Model
         }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Standard> Standards { get; set; }
 
@@ -30,6 +25,16 @@ namespace EntityFrameworkConsole.Model
         public int StandardId { get; set; }
         public virtual Standard Standard { get; set; }
     }
+    public class Teacher
+    {
+        public Teacher() { }
+
+        public int TeacherId { get; set; }
+        public string TeacherName { get; set; }
+        public int StandardId { get; set; }
+        public virtual Standard Standard { get; set; }
+    }
+
 
     public class Standard
     {
