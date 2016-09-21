@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternConsole", "DesignPatternConsole\DesignPatternConsole.csproj", "{917885D2-8624-4786-BE49-32C1A620559B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Creational", "Creational", "{CB05B4F1-C268-4229-80BE-800C4CB7D049}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", "{47E9A544-0B72-40F1-92FE-178D77054D9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{6D4D7FFC-A916-48DF-A81C-BD831805EDC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Singleton.Structural", "Creational\GoF.Singleton.Structural\GoF.Singleton.Structural.csproj", "{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Adapter.Structural", "Structural\GoF.Adapter.Structural\GoF.Adapter.Structural.csproj", "{536FED39-19F2-4FCD-A1DB-0288416EF2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Strategy.Structural", "Behavioral\GoF.Strategy.Structural\GoF.Strategy.Structural.csproj", "{2E579926-B49A-4EDF-B030-8DE813644B90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +21,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{917885D2-8624-4786-BE49-32C1A620559B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{917885D2-8624-4786-BE49-32C1A620559B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{917885D2-8624-4786-BE49-32C1A620559B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{917885D2-8624-4786-BE49-32C1A620559B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536FED39-19F2-4FCD-A1DB-0288416EF2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536FED39-19F2-4FCD-A1DB-0288416EF2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536FED39-19F2-4FCD-A1DB-0288416EF2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536FED39-19F2-4FCD-A1DB-0288416EF2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E579926-B49A-4EDF-B030-8DE813644B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E579926-B49A-4EDF-B030-8DE813644B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E579926-B49A-4EDF-B030-8DE813644B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E579926-B49A-4EDF-B030-8DE813644B90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9823A9E2-1E0C-4AD2-80F7-E446DD559BD0} = {CB05B4F1-C268-4229-80BE-800C4CB7D049}
+		{536FED39-19F2-4FCD-A1DB-0288416EF2AF} = {47E9A544-0B72-40F1-92FE-178D77054D9B}
+		{2E579926-B49A-4EDF-B030-8DE813644B90} = {6D4D7FFC-A916-48DF-A81C-BD831805EDC5}
 	EndGlobalSection
 EndGlobal

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DesignPatternConsole")]
+[assembly: AssemblyTitle("GoF.Strategy.Structural")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DesignPatternConsole")]
+[assembly: AssemblyProduct("GoF.Strategy.Structural")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("917885d2-8624-4786-be49-32c1a620559b")]
+[assembly: Guid("2e579926-b49a-4edf-b030-8de813644b90")]
 
 // Version information for an assembly consists of the following four values:
 //

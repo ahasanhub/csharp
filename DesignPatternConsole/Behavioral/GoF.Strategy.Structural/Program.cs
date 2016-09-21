@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatternConsole
+namespace GoF.Strategy.Structural
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
-            Console.ReadLine();
         }
     }
 }
