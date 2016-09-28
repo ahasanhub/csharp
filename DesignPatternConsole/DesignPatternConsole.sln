@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Strategy.Structural", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Adapter.RealWorld", "Structural\GoF.Adapter.RealWorld\GoF.Adapter.RealWorld.csproj", "{1AEBD28C-8132-484E-8673-ECB0FA31120B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoF.Factory.Structural", "Creational\GoF.Factory.Structural\GoF.Factory.Structural.csproj", "{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1AEBD28C-8132-484E-8673-ECB0FA31120B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AEBD28C-8132-484E-8673-ECB0FA31120B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AEBD28C-8132-484E-8673-ECB0FA31120B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +54,6 @@ Global
 		{536FED39-19F2-4FCD-A1DB-0288416EF2AF} = {47E9A544-0B72-40F1-92FE-178D77054D9B}
 		{2E579926-B49A-4EDF-B030-8DE813644B90} = {6D4D7FFC-A916-48DF-A81C-BD831805EDC5}
 		{1AEBD28C-8132-484E-8673-ECB0FA31120B} = {47E9A544-0B72-40F1-92FE-178D77054D9B}
+		{90BB2946-2B20-4DAB-9FEE-BA6CAC3B1D92} = {CB05B4F1-C268-4229-80BE-800C4CB7D049}
 	EndGlobalSection
 EndGlobal
