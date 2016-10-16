@@ -30,9 +30,9 @@ namespace EntityFrameworkConsole
 
         private static void OneToMany()
         {
-            //OneToManyInsert();
+            OneToManyInsert();
             //OneToManyModified();
-            OneToManyDelete();
+            //OneToManyDelete();
         }
 
         private static void OneToManyInsert()
@@ -53,7 +53,9 @@ namespace EntityFrameworkConsole
                 ctx.SaveChanges();
                 Console.WriteLine("Insert completed.");
                 Console.ReadLine();
-                //var st = ctx.Standards.ToList();
+                //var st = ctx.Students.FirstOrDefault();
+                //var sta = st.Standard;
+                //var dd = sta.Students;
             }
         }
         private static void OneToManyModified()
