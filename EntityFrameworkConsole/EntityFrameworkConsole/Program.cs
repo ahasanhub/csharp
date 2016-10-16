@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Diagnostics;
 using System.Linq;
 using EntityFrameworkConsole.Model;
@@ -9,6 +10,26 @@ namespace EntityFrameworkConsole
     class Program
     {
         static void Main(string[] args)
+        {
+
+            Console.WriteLine("Please enter command : (relation,entitystate)");
+            var cmd = Console.ReadLine();
+            switch (cmd)
+            {
+                case "relation":
+                    Relations();
+                    break;
+                case "entitystate":
+                    EfEntityState();
+                    break;
+                default:
+                    break;
+
+            }
+
+        }
+
+        private static void Relations()
         {
             Console.WriteLine("Please enter command : (11,1m,mm)");
             var cmd = Console.ReadLine();
@@ -25,7 +46,6 @@ namespace EntityFrameworkConsole
                     break;
 
             }
-
         }
 
         private static void OneToMany()
@@ -119,6 +139,10 @@ namespace EntityFrameworkConsole
 
 
             }
+        }
+
+        private static void EfEntityState()
+        {
         }
 
         public  class Logger
