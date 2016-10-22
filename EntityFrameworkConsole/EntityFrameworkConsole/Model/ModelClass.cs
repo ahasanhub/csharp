@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
 namespace EntityFrameworkConsole.Model
 {
+    [DbConfigurationType(typeof(EFDbConfiguration))]
     public class SchoolContext : DbContext
     {
         public SchoolContext() : base("name=SchoolDBConnectionString")
@@ -14,6 +17,8 @@ namespace EntityFrameworkConsole.Model
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Standard> Standards { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<Company> Companies { get; set; }
 
     }
     public class Student
@@ -23,6 +28,8 @@ namespace EntityFrameworkConsole.Model
         public int StudentId { get; set; }
         public string StudentName { get; set; }
         public int StandardId { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
         public virtual Standard Standard { get; set; }
     }
     public class Teacher
@@ -60,5 +67,19 @@ namespace EntityFrameworkConsole.Model
 
        
     }
+    [Table("Test")]
+    public class Test
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Add { get; set; }
+    }
+    public class Company
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Add { get; set; }
+    }
+
 
 }

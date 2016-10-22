@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\EFCommandInterceptor.cs" />
+    <Compile Include="Model\EFDbConfiguration.cs" />
     <Compile Include="Model\ModelClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

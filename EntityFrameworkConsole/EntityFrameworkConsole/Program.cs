@@ -50,7 +50,8 @@ namespace EntityFrameworkConsole
             {
                 ctx.Database.Log = Logger.Log;
                 ctx.Standards.Add(standard);
-                ctx.SaveChanges();
+                var result=ctx.SaveChanges();
+                var test = ctx.Tests.ToList();
                 Console.WriteLine("Insert completed.");
                 Console.ReadLine();
                 //var st = ctx.Students.FirstOrDefault();
