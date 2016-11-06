@@ -53,15 +53,24 @@ namespace EntityFrameworkConsole
             OneToManyInsert();
             //OneToManyModified();
             //OneToManyDelete();
+            //Test1();
+        }
+
+        private static void Test1()
+        {
+            using (var ctx = new SchoolContext())
+            {
+                var dfs = ctx.Students.ToList();
+            }
         }
 
         private static void OneToManyInsert()
         {
             Standard standard = new Standard();
             standard.Description = "Standard";
-            Student stu1 = new Student { StudentName = "Ahasan" };
-            Student stu2 = new Student { StudentName = "Hasam" };
-            Student stu3 = new Student { StudentName = "Arif" };
+            Student stu1 = new Student { StudentName = "Ahasan",StudentTypeId = StudentType.General};
+            Student stu2 = new Student { StudentName = "Hasam", StudentTypeId = StudentType.General };
+            Student stu3 = new Student { StudentName = "Arif", StudentTypeId = StudentType.General };
             standard.Students.Add(stu1);
             standard.Students.Add(stu2);
             standard.Students.Add(stu3);
