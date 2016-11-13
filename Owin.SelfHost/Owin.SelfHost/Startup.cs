@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.Owin;
 
 namespace Owin.SelfHost
 {
@@ -18,6 +19,7 @@ namespace Owin.SelfHost
                 routeTemplate:"api/{controller}/{id}",
                 defaults:new {id=RouteParameter.Optional}
                 );
+            
             appBuilder.Use(typeof(LoggingMiddleware));
             appBuilder.UseWebApi(config);
             
