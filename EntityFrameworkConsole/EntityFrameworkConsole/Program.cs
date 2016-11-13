@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using EntityFrameworkConsole.Model;
@@ -12,7 +13,7 @@ namespace EntityFrameworkConsole
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Please enter command : (relation,entitystate)");
+            Console.WriteLine("Please enter command : (relation,entitystate,changetrack)");
             var cmd = Console.ReadLine();
             switch (cmd)
             {
@@ -21,6 +22,9 @@ namespace EntityFrameworkConsole
                     break;
                 case "entitystate":
                     EfEntityState();
+                    break;
+                case "changetrack":
+                    EfChangeTrack();
                     break;
                 default:
                     break;
@@ -143,6 +147,28 @@ namespace EntityFrameworkConsole
 
         private static void EfEntityState()
         {
+        }
+
+        private static void EfChangeTrack()
+        {
+            using (var ctx=new SchoolContext())
+            {
+                
+            }
+
+        }
+        private static void DisplayTrackedEntities(DbChangeTracker changeTracker)
+        {
+            Console.WriteLine("");
+
+            var entries = changeTracker.Entries();
+            foreach (var entry in entries)
+            {
+                Console.WriteLine("Entity Name: {0}", entry.Entity.GetType().FullName);
+                Console.WriteLine("Status: {0}", entry.State);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("---------------------------------------");
         }
 
         public  class Logger
