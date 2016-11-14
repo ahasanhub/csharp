@@ -18,7 +18,9 @@ namespace Owin.SelfHost
             {
                 HttpClient client=new HttpClient();
                 client.DefaultRequestHeaders.Add("Client","hospital");
-                var response = client.GetAsync(baseAddress + "api/values").Result;
+                //HttpResponseMessage response = null;
+                //Task.Run(async () => response = await client.GetAsync(baseAddress + "api/values")).ContinueWith();
+                HttpResponseMessage response = client.GetAsync(baseAddress + "api/values").Result;
                 Console.WriteLine(response);
                 Console.WriteLine(response.Content.ReadAsStringAsync().Result);
                 

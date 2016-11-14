@@ -9,8 +9,7 @@ namespace Owin.SelfHost
 {
     public class LoggingMiddleware : OwinMiddleware
     {
-        public LoggingMiddleware(OwinMiddleware next)
-        : base(next)
+        public LoggingMiddleware(OwinMiddleware next): base(next)
         {
         }
 
@@ -23,5 +22,6 @@ namespace Owin.SelfHost
             await Next.Invoke(context);
             Console.WriteLine("End Request");
         }
+        
     }
 }
