@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MyPackage</id>
+    <version>1.0.1</version>
+    <authors>Ahasan Habib</authors>
+    <owners>Zayn</owners>
+    <licenseUrl>http://contextidea.com/licence</licenseUrl>
+    <projectUrl>http://contextidea.com/project</projectUrl>
+    <iconUrl>http://contextidea.com/icon</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MyPackage description</description>
+    <releaseNotes>Summary of changes made in this release of the mypackage.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>tt tt2</tags>
+    <dependencies>
+      <dependency id="Microsoft.Net.Http" version="2.2.29" />
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
+    </dependencies>
+  </metadata>
+<files>
+<file src="NugetDemo\MyClass.cs" target="content\MyFolder\MyClass.cs" />
+</files>
+</package>
