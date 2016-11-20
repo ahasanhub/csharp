@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Reflection;
 using System.Web.Http;
+using Autofac;
+using Autofac.Integration.WebApi;
+using SocialNetwork.Api.Autofac.Modules;
 
 namespace SocialNetwork.Api
 {
@@ -10,7 +11,13 @@ namespace SocialNetwork.Api
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            var builder = new ContainerBuilder();
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterModule<SocialNetworkModule>();
 
+            var container = builder.Build();
+
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
             // Web API routes
             config.MapHttpAttributeRoutes();
 

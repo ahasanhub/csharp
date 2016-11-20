@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Api", "SocialNetwork.Api\SocialNetwork.Api.csproj", "{1B684AAD-90DD-410F-A3C3-62361642816B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.Data", "SocialNetwork.Data\SocialNetwork.Data.csproj", "{371F81F5-188C-40B3-A346-32D89E8CFED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork.DbMigrations", "SocialNetwork.DbMigrations\SocialNetwork.DbMigrations.csproj", "{ABF4A009-5DA7-449C-8BE9-70F0222E942F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1B684AAD-90DD-410F-A3C3-62361642816B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B684AAD-90DD-410F-A3C3-62361642816B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B684AAD-90DD-410F-A3C3-62361642816B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371F81F5-188C-40B3-A346-32D89E8CFED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371F81F5-188C-40B3-A346-32D89E8CFED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371F81F5-188C-40B3-A346-32D89E8CFED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371F81F5-188C-40B3-A346-32D89E8CFED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF4A009-5DA7-449C-8BE9-70F0222E942F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF4A009-5DA7-449C-8BE9-70F0222E942F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF4A009-5DA7-449C-8BE9-70F0222E942F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF4A009-5DA7-449C-8BE9-70F0222E942F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
