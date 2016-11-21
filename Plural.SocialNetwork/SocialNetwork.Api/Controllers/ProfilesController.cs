@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web.Http;
 using SocialNetwork.Api.Helpers;
 using SocialNetwork.Data.Models;
 using SocialNetwork.Data.Repositories;
+using Thinktecture.IdentityModel.WebApi;
 
 namespace SocialNetwork.Api.Controllers
 {
@@ -21,6 +23,30 @@ namespace SocialNetwork.Api.Controllers
         public async Task<IHttpActionResult> GetAsync(string username, string password)
         {
             var user = await userRepository.GetAsync(username, HashHelper.Sha512(password + username));
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var profile = await profileRepository.GetForAsync(user);
+
+            if (profile == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(profile);
+        }
+        [HttpGet]
+        //[Authorize]
+        [ScopeAuthorize("read")]
+        public async Task<IHttpActionResult> GetAsync()
+        {
+            var claimsPrincipal = User as ClaimsPrincipal;
+
+            var username = claimsPrincipal?.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+            var user = await userRepository.GetAsync(username);
 
             if (user == null)
             {

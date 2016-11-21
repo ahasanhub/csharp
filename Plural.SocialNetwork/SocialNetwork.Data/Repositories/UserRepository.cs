@@ -22,6 +22,16 @@ namespace SocialNetwork.Data.Repositories
                 return queryResult.SingleOrDefault();
             }
         }
+        public async Task<User> GetAsync(string username)
+        {
+            using (var connection = OpenConnection())
+            {
+                var queryResult = await connection.QueryAsync<User>("select * from [Users] where [Username]=@username",
+                    new { username });
+
+                return queryResult.SingleOrDefault();
+            }
+        }
 
         public async Task<IEnumerable<FriendRelation>> GetFriendsForAsync(User user)
         {
@@ -37,5 +47,6 @@ namespace SocialNetwork.Data.Repositories
     {
         Task<IEnumerable<FriendRelation>> GetFriendsForAsync(User user);
         Task<User> GetAsync(string username, string password);
+        Task<User> GetAsync(string username);
     }
 }
