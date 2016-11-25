@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.Owin.Security;
 using Thinktecture.IdentityModel.Clients;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace SocialNetwork.Web.Controllers
 {
@@ -50,16 +52,16 @@ namespace SocialNetwork.Web.Controllers
         {
             var claimsPrincipal = User as ClaimsPrincipal;
 
-            //using (var client = new HttpClient())
-            //{
-            //    client.DefaultRequestHeaders.Authorization =
-            //        new AuthenticationHeaderValue("Bearer", 
-            //        claimsPrincipal.FindFirst("access_token").Value);
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer",
+                    claimsPrincipal.FindFirst("access_token").Value);
 
-            //    var profile = await client.GetAsync("http://localhost:3467/api/Profiles");
+                var profile = await client.GetAsync("http://localhost:13910/api/Profiles");
 
-            //    var profileContent = await profile.Content.ReadAsStringAsync();
-            //}
+                var profileContent = await profile.Content.ReadAsStringAsync();
+            }
 
             return View(claimsPrincipal.Claims);
         }

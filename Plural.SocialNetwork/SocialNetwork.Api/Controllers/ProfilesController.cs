@@ -39,8 +39,8 @@ namespace SocialNetwork.Api.Controllers
             return Ok(profile);
         }
         [HttpGet]
-        //[Authorize]
-        [ScopeAuthorize("read")]
+        [Authorize]
+        //[ScopeAuthorize("read")]
         public async Task<IHttpActionResult> GetAsync()
         {
             var claimsPrincipal = User as ClaimsPrincipal;

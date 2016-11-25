@@ -27,9 +27,9 @@ namespace SocialNetwork.Web1
             {
                 ClientId = "socialnetwork_implicit_web1",
                 Authority = "http://localhost:23837",
-                RedirectUri = "http://localhost:10127",
+                RedirectUri = "http://localhost:28037",
                 ResponseType = "token id_token",
-                Scope = "openid profile",
+                Scope = "openid profile",                
                 SignInAsAuthenticationType = DefaultAuthenticationTypes.ApplicationCookie
             });
         }

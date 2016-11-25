@@ -1,6 +1,6 @@
 ﻿-- Passwords are 'password' salted with the email using SHA 512
 insert into [Users]([Id], [Username], [Password]) 
-values('e6f6fe01-7de0-4301-8a5d-6b49e1eec7f1', 'mail@filipekberg.se', 'XXMhnJzzRcHMbTW6X39tWlTPcK+CQIfnKy8jz+Zxb6xKqDqKXFvP9IUztTnyRusF7ENWFPTsV4SPUM38O3A/8Q==');
+values('e6f6fe01-7de0-4301-8a5d-6b49e1eec7f1', 'ahasan@yahoo.com', 'XXMhnJzzRcHMbTW6X39tWlTPcK+CQIfnKy8jz+Zxb6xKqDqKXFvP9IUztTnyRusF7ENWFPTsV4SPUM38O3A/8Q==');
 
 insert into [Users]([Id], [Username], [Password]) 
 values('61bd209d-8cd2-4017-818f-7112b7c00769', 'anders.andersson@sweden.com', 'nk6aI/7fhHg61Xauj1qC9TEnScOLzjJnqHMlKkccW3gx1crfeEvRfYXR+fRTNQ8RsAVexarL5zBq0jvWXh9nAg==');

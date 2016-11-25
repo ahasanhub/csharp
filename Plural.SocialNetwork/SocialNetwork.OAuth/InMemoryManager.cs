@@ -18,12 +18,12 @@ namespace SocialNetwork.OAuth
             {
                 new InMemoryUser
                 {
-                    Subject = "mail@filipekberg.se",
-                    Username = "mail@filipekberg.se",
+                    Subject = "ahasan@yahoo.com",
+                    Username = "ahasan@yahoo.com",
                     Password = "password",
                     Claims = new []
                     {
-                        new Claim(Constants.ClaimTypes.Name, "Filip Ekberg")
+                        new Claim(Constants.ClaimTypes.Name, "Ahasan Habib")
                     }
                 }
             };
