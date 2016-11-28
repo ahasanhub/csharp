@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Reflection;
+using IdentityServer4.Services;
+using IdentityServer4.Validation;
 
 namespace OAuth.IdentityServer4.Serv
 {
@@ -28,13 +30,15 @@ namespace OAuth.IdentityServer4.Serv
             // configure identity server with in-memory users, but EF stores for clients and scopes
             services.AddIdentityServer()
                 .AddTemporarySigningCredential()
-                .AddInMemoryUsers(Config.GetUsers())
+                //.AddInMemoryUsers(Config.GetUsers())
                 .AddConfigurationStore(builder =>
                     builder.UseSqlServer(connectionString, options =>
                         options.MigrationsAssembly(migrationsAssembly)))
                 .AddOperationalStore(builder =>
                     builder.UseSqlServer(connectionString, options =>
                         options.MigrationsAssembly(migrationsAssembly)));
+            services.AddTransient<IResourceOwnerPasswordValidator, Configuration.ResourceOwnerPasswordValidator>();
+            services.AddTransient<IProfileService, Configuration.ProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
