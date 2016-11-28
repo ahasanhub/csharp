@@ -41,7 +41,7 @@ namespace OAuth.IdentityServer4.Serv
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             // this will do the initial DB population
-            InitializeDatabase(app);
+            //InitializeDatabase(app);
             loggerFactory.AddConsole(LogLevel.Debug);
 
             if (env.IsDevelopment())
@@ -67,6 +67,7 @@ namespace OAuth.IdentityServer4.Serv
                 context.Database.Migrate();
                 if (!context.Clients.Any())
                 {
+                    var rr = Config.GetClients();
                     foreach (var client in Config.GetClients())
                     {
                         context.Clients.Add(client.ToEntity());

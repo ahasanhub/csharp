@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace QuickstartIdentityServer.Data.Migrations.IdentityServer.PersistedGrantDb
+namespace OAuth.IdentityServer4.Serv.Data.Migrations.IdentityServer.PersistedGrantDb
 {
     public partial class InitialIdentityServerPersistedGrantDbMigration : Migration
     {
