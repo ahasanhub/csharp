@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3DF6A103-E7F5-4297-ACA5-E9ACDBC0F3FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C54BC584-E03E-42C1-89DB-7741CF266B9B}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OAuth.IdentityServer4.Serv", "src\OAuth.IdentityServer4.Serv\OAuth.IdentityServer4.Serv.xproj", "{7008F146-80B3-488C-A3E3-F3AA5ED8714E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7008F146-80B3-488C-A3E3-F3AA5ED8714E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7008F146-80B3-488C-A3E3-F3AA5ED8714E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7008F146-80B3-488C-A3E3-F3AA5ED8714E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7008F146-80B3-488C-A3E3-F3AA5ED8714E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7008F146-80B3-488C-A3E3-F3AA5ED8714E} = {3DF6A103-E7F5-4297-ACA5-E9ACDBC0F3FA}
+	EndGlobalSection
+EndGlobal
