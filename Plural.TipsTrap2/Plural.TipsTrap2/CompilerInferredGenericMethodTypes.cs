@@ -17,8 +17,10 @@ namespace Plural.TipsTrap2
             const string name = "Ahasan";
             const int age = 32;
             //DebugToWrite(age);
-            DebugToWrite<string>(name);
-            DebugToWrite<int>(age);
+            //DebugToWrite<string>(name);
+            //DebugToWrite<int>(age);
+            DebugToWrite(name);
+            DebugToWrite(age);
 
         }
         void DebugToWrite<T>(T obj)
@@ -26,9 +28,9 @@ namespace Plural.TipsTrap2
             Debug.WriteLine(obj);
         }
 
-        void DebugToWrite(object s)
-        {
-            Debug.WriteLine(s);
-        }
+        //void DebugToWrite(object s)
+        //{
+        //    Debug.WriteLine(s);
+        //}
     }
 }
