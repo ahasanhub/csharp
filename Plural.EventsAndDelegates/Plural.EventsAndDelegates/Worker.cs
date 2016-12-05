@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DelegateAndEvents
+namespace Plural.EventsAndDelegates
 {
     //public delegate int WorkPerformedHandler(object sender,WorkPerformedEventArgs e);
     public class Worker
