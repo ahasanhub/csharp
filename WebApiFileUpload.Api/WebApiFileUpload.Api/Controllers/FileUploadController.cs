@@ -31,7 +31,7 @@ namespace WebApiFileUpload.Api.Controllers
         }
         [Route("filesNoContentType")]
         [HttpPost]
-        //[ValidateMimeMultipartContentFilter]
+        [ValidateMimeMultipartContentFilter]
         public async Task<FileResult> UploadMultipleFiles2()
         {
             var provider = new MultipartFormDataStreamProvider(ServerUploadFolder);
@@ -39,6 +39,7 @@ namespace WebApiFileUpload.Api.Controllers
             {
                 var streamProvider = StreamConversion();
                 await streamProvider.ReadAsMultipartAsync(provider);
+                
                 return new FileResult
                 {
                     FileNames = provider.FileData.Select(entry => entry.LocalFileName),
