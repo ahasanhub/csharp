@@ -39,7 +39,7 @@ namespace WebApiFileUpload.Api.Controllers
             {
                 var streamProvider = StreamConversion();
                 await streamProvider.ReadAsMultipartAsync(provider);
-                
+                var description = provider.FormData["description"];
                 return new FileResult
                 {
                     FileNames = provider.FileData.Select(entry => entry.LocalFileName),
@@ -50,7 +50,7 @@ namespace WebApiFileUpload.Api.Controllers
                     DownloadLink = "TODO, will implement when file is persisited"
                 };
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }

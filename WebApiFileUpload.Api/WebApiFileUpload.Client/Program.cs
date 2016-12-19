@@ -27,7 +27,7 @@ namespace WebApiFileUpload.Client
                 //StreamContent streamContent = new StreamContent(filestream);
                 //streamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
             }
-
+            content.Add(new StringContent("Hello"), "description");
             message.Method = HttpMethod.Post;
             message.Content = content;
             message.RequestUri = new Uri("http://localhost:8000/filesNoContentType");
