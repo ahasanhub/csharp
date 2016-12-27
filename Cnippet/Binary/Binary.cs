@@ -14,25 +14,25 @@ namespace Binary
         [TestMethod]
         public void BinaryTest()
         {
-           var binary=StringToBinary("Hello World");
-           Debug.WriteLine(binary);
-           string message = BinaryToString(binary);
-           Debug.WriteLine(message);
+            var binary = StringToBinary("Hello World");
+            Debug.WriteLine(binary);
+            string message = BinaryToString(binary);
+            Debug.WriteLine(message);
         }
 
         private string BinaryToString(string binary)
         {
-            List<byte> bytes=new List<byte>();
-            for (int i = 0; i < binary.Length; i+=8)
+            List<byte> bytes = new List<byte>();
+            for (int i = 0; i < binary.Length; i += 8)
             {
-                bytes.Add(Convert.ToByte(binary.Substring(i,8),2));
+                bytes.Add(Convert.ToByte(binary.Substring(i, 8), 2));
             }
             return Encoding.ASCII.GetString(bytes.ToArray());
         }
 
         private string StringToBinary(string message)
         {
-            StringBuilder sb=new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             foreach (char c in message.ToCharArray())
             {
                 var dfg = Convert.ToString(c, 2);
