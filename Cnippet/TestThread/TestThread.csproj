@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7933C844-E1AE-4D71-982F-EB32621801B4}</ProjectGuid>
+    <ProjectGuid>{70D8E571-A184-4518-B8A6-9044A3AABD55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Binary</RootNamespace>
-    <AssemblyName>Binary</AssemblyName>
+    <RootNamespace>TestThread</RootNamespace>
+    <AssemblyName>TestThread</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binary.cs" />
+    <Compile Include="Background.cs" />
+    <Compile Include="Foreground.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
