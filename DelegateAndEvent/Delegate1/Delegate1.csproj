@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8AD3F465-CF37-40DC-9283-58C4945000A1}</ProjectGuid>
+    <ProjectGuid>{9C6CE7E8-0BB1-4648-A554-0369AEA9C95D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Event1</RootNamespace>
-    <AssemblyName>Event1</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Delegate1</RootNamespace>
+    <AssemblyName>Delegate1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileLogger.cs" />
+    <Compile Include="MyClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
