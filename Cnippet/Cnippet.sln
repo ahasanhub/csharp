@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parameters", "Parameters\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methods", "Methods\Methods.csproj", "{760F03C9-9BA9-459B-AC07-805A232DEAAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTest", "ExpressionTest\ExpressionTest.csproj", "{F6FC2DC0-080D-4F55-80EC-AD22EE1051E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{760F03C9-9BA9-459B-AC07-805A232DEAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{760F03C9-9BA9-459B-AC07-805A232DEAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{760F03C9-9BA9-459B-AC07-805A232DEAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FC2DC0-080D-4F55-80EC-AD22EE1051E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FC2DC0-080D-4F55-80EC-AD22EE1051E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FC2DC0-080D-4F55-80EC-AD22EE1051E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FC2DC0-080D-4F55-80EC-AD22EE1051E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
