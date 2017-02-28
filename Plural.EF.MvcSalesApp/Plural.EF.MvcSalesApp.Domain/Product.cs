@@ -5,13 +5,10 @@ namespace Plural.EF.MvcSalesApp.Domain
 {
   public class Product
   {
-    private ICollection<Category> _categories;
-    private ICollection<LineItem> _lineItems;
-
-    public Product()
+      public Product()
     {
-      _lineItems = new HashSet<LineItem>();
-      _categories = new HashSet<Category>();
+      LineItems = new HashSet<LineItem>();
+      Categories = new HashSet<Category>();
     }
 
     public int ProductId { get; set; }
@@ -21,16 +18,7 @@ namespace Plural.EF.MvcSalesApp.Domain
     public bool IsAvailable { get; set; }
     
 
-    public ICollection<LineItem> LineItems
-    {
-      get { return _lineItems; }
-      set { _lineItems = value; }
-    }
-
-    public ICollection<Category> Categories
-    {
-      get { return _categories; }
-      set { _categories = value; }
-    }
+    public ICollection<LineItem> LineItems { get; set; }
+    public ICollection<Category> Categories { get; set; }
   }
 }
