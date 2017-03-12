@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactiveExtention.Basic", "ReactiveExtention.Basic\ReactiveExtention.Basic.csproj", "{F9A990BC-0CD1-4189-932A-95F62AB464D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rx.Basic", "Rx.Basic\Rx.Basic.csproj", "{3B293FB9-7B6B-4983-8438-E69342E8AE64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9A990BC-0CD1-4189-932A-95F62AB464D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A990BC-0CD1-4189-932A-95F62AB464D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A990BC-0CD1-4189-932A-95F62AB464D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A990BC-0CD1-4189-932A-95F62AB464D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B293FB9-7B6B-4983-8438-E69342E8AE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B293FB9-7B6B-4983-8438-E69342E8AE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B293FB9-7B6B-4983-8438-E69342E8AE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B293FB9-7B6B-4983-8438-E69342E8AE64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
