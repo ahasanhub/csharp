@@ -1,0 +1,171 @@
+﻿<#@ template language="C#" HostSpecific="True" Debug="True" #>
+<#@ output extension="cs" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data.Linq" #>
+<#@ ScaffoldingAssembly Processor="ScaffoldingAssemblyLoader" #>
+<#
+string routePrefix;
+if (String.IsNullOrEmpty(AreaName)) 
+{
+    routePrefix = ControllerRootName;
+}
+else
+{
+    routePrefix = AreaName + "/" + ControllerRootName;
+}
+#>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="Namespace" #>
+<#@ parameter type="System.String" name="AreaName" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Net;
+using System.Web;
+using System.Web.Mvc;
+using ContextIdea.ERP.Web.Common;
+using ContextIdea.ERP.Configuration;
+using ContextIdeaData.EF;
+using ContextIdeaData.EF.Data;
+using ContextIdeaData.EF.Interfaces;
+
+namespace <#= Namespace #>
+{
+<#
+    String modelTypeName = ControllerName.Replace("Controller", "");
+    String modelVariable = "model";
+#>
+    public class <#= ControllerName #> : BaseController
+    {
+		private readonly IUnitOfWork _unitOfWork;
+        private readonly IRepository<<#= modelTypeName #>> _repository;
+        
+        public <#=ControllerName#>()
+        {
+            _unitOfWork = new UnitOfWork(new CiDbContext());
+            _repository = _unitOfWork.Repository<<#= modelTypeName #>>();
+        }
+
+        // GET: <#= routePrefix #>
+		public async Task<ActionResult> Index()
+        {
+			var items = await _repository.Query().GetAsync();
+			return View(items.ToList());
+        }
+
+        // GET: <#= routePrefix #>/Details/5
+		public async Task<ActionResult> Details(int? id)
+        {
+            if (id == null)
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+			var item = await _repository.FindByIdAsync(id);
+
+            if (item == null)
+				return HttpNotFound();
+
+            return View(item);
+        }
+
+        // GET: <#= routePrefix #>/Create
+        public ActionResult Create()
+        {
+		     return View();
+        }
+
+        // POST: <#= routePrefix #>/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+		public async Task<ActionResult> Create(<#= modelTypeName #> <#= modelVariable #>)
+        {
+            if (!ModelState.IsValid)				
+				return View(<#= modelVariable #>);
+
+			_repository.Insert(<#= modelVariable #>);
+			var result = await _unitOfWork.SaveAsync();
+
+			if (result == 0)
+				return View(<#= modelVariable #>);
+
+			TempData.Add(ConstantKeys.SUCCESS_MSG_KEY, Constants.SAVE_SUCCESS_MSG);
+            return RedirectToAction("Index");
+        }
+
+        // GET: <#= routePrefix #>/Edit/5
+		public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+			var item = await _repository.FindByIdAsync(id);
+
+            if (item == null)
+				return HttpNotFound();
+
+            return View(item);
+        }
+
+        // POST: <#= routePrefix #>/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+		public async Task<ActionResult> Edit(<#= modelTypeName #> <#= modelVariable #>)
+        {
+            if (!ModelState.IsValid)
+				return View(<#= modelVariable #>);
+            
+            _repository.Update(<#= modelVariable #>.<#= modelTypeName #>Id, model);
+			var result = await _unitOfWork.SaveAsync();
+
+			if (result == 0)
+				return View(model);
+
+			TempData.Add(ConstantKeys.SUCCESS_MSG_KEY, Constants.UPDATE_SUCCESS_MSG);
+            return RedirectToAction("Index");
+        }
+
+        // GET: <#= routePrefix #>/Delete/5
+		public async Task<ActionResult> Delete(int? id)
+        {
+            if (id == null)
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			
+			var item = await _repository.FindByIdAsync(id);
+
+            if (item == null)
+				return HttpNotFound();
+
+            return View(item);
+        }
+
+        // POST: <#= routePrefix #>/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+		public async Task<ActionResult> DeleteConfirmed(int id)
+        {
+			var item = await _repository.FindByIdAsync(id);
+
+            if (item == null)
+                return HttpNotFound();
+
+            _repository.Delete(id);
+            var result = await _unitOfWork.SaveAsync();
+
+			if (result == 0)
+				return View(item);
+
+			TempData.Add(ConstantKeys.SUCCESS_MSG_KEY, Constants.DELETE_SUCCESS_MSG);
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _unitOfWork.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}
